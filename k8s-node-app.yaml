@@ -15,8 +15,7 @@ spec:
     metadata:
       labels:
         app: nodejs-app
-    spec:
-      containers:
+    containers:
       - name: nodejs-app
         image: "devopshint/node-app:latest"
         ports:
@@ -33,6 +32,9 @@ spec:
     app: nodejs-app
   type: NodePort
   ports:
+  - name: http
+    targetPort: 3000
+    port: 80
   - name: http
     targetPort: 3000
     port: 80
